@@ -1,0 +1,657 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px 15px;
+
+    font-family: 'Poppins', sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe1e9,
+            #ffc4d6,
+            #fce4ec
+        );
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.card {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    padding: 40px 35px;
+
+    background:
+        rgba(255, 255, 255, 0.93);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 50px
+        rgba(180, 70, 110, 0.18);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        cardAppear 1s ease;
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   TEDDY
+========================= */
+
+.teddy-area {
+
+    width: 160px;
+
+    height: 150px;
+
+    margin:
+        0 auto 15px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.teddy {
+
+    font-size: 100px;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.emotion {
+
+    position: absolute;
+
+    right: 5px;
+
+    top: 5px;
+
+    font-size: 35px;
+
+    transition:
+        0.3s ease;
+}
+
+
+/* Happy teddy */
+
+.teddy.happy {
+
+    animation:
+        happyTeddy
+        0.6s
+        infinite
+        alternate;
+}
+
+
+@keyframes happyTeddy {
+
+    from {
+
+        transform:
+            rotate(-8deg)
+            translateY(0);
+
+    }
+
+    to {
+
+        transform:
+            rotate(8deg)
+            translateY(-10px);
+
+    }
+
+}
+
+
+/* Sad teddy */
+
+.teddy.sad {
+
+    animation:
+        sadTeddy
+        0.8s
+        infinite
+        alternate;
+}
+
+
+@keyframes sadTeddy {
+
+    from {
+
+        transform:
+            rotate(-3deg)
+            translateY(0);
+
+    }
+
+    to {
+
+        transform:
+            rotate(3deg)
+            translateY(7px);
+
+    }
+
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.love-picture {
+
+    width: 100%;
+
+    max-width: 280px;
+
+    height: 280px;
+
+    margin:
+        5px auto 25px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    border:
+        5px solid #f7c4d5;
+
+    background: #ffe8ef;
+
+    box-shadow:
+        0 10px 30px
+        rgba(180, 70, 110, 0.25);
+
+    position: relative;
+}
+
+
+/* IMAGE ITSELF */
+
+.love-picture img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* Image zoom */
+
+.love-picture:hover img {
+
+    transform:
+        scale(1.06);
+}
+
+
+/* =========================
+   IMAGE HEART DECORATION
+========================= */
+
+.love-picture::after {
+
+    content: "♡";
+
+    position: absolute;
+
+    bottom: 8px;
+
+    right: 12px;
+
+    font-size: 32px;
+
+    color: white;
+
+    text-shadow:
+        0 2px 5px
+        rgba(0, 0, 0, 0.25);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   SMALL HEADING
+========================= */
+
+.small-heading {
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    color: #c45c80;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    font-size: 47px;
+
+    color: #b52f62;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+
+    color: #e78aaa;
+
+    font-size: 25px;
+
+    margin:
+        10px 0 20px;
+}
+
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 60px;
+
+    height: 1px;
+
+    background: #eab0c3;
+
+    vertical-align: middle;
+
+    margin:
+        0 10px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+
+    font-size: 14px;
+
+    color: #68535d;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   LOVE NOTE
+========================= */
+
+.love-note {
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    color: #bd4773;
+
+    margin:
+        20px 0 10px;
+}
+
+
+/* =========================
+   QUESTION
+========================= */
+
+.question {
+
+    font-size: 15px;
+
+    color: #9c3158;
+
+    font-weight: 500;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 70px;
+
+    position: relative;
+}
+
+
+button {
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding:
+        13px 25px;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        all 0.35s ease;
+}
+
+
+/* YES BUTTON */
+
+#yesBtn {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e85d8c,
+            #c7376a
+        );
+
+    box-shadow:
+        0 5px 15px
+        rgba(199, 55, 106, 0.25);
+}
+
+
+#yesBtn:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 8px 20px
+        rgba(199, 55, 106, 0.35);
+}
+
+
+/* NO BUTTON */
+
+#noBtn {
+
+    color: #bd4773;
+
+    background: #fff0f5;
+
+    border:
+        1px solid #f0bbce;
+}
+
+
+#noBtn:hover {
+
+    background: #ffe1eb;
+}
+
+
+/* =========================
+   RESPONSE
+========================= */
+
+#response {
+
+    margin-top: 20px;
+
+    min-height: 35px;
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    font-size: 25px;
+
+    color: #b52f62;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+    margin-top: 25px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid #f5dce5;
+
+    color: #b78b9c;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts-container {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.floating-heart {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    animation:
+        floatUp
+        linear
+        forwards;
+
+    opacity: 0.8;
+}
+
+
+@keyframes floatUp {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .card {
+
+        padding:
+            30px 20px;
+
+    }
+
+
+    h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .love-picture {
+
+        width: 230px;
+
+        height: 230px;
+
+    }
+
+
+    .message {
+
+        font-size: 13px;
+
+    }
+
+
+    .buttons {
+
+        gap: 10px;
+
+    }
+
+}
